@@ -16,9 +16,7 @@ namespace Bakery.Models
     public int PastryTotal(int pastryAmount)
     {
       int pastryCost = 0;
-      if (pastryCost % 3 == 0) {
-        pastryCost = (PastryAmount / 3) * 5;
-      } else if (PastryAmount <= 2) {
+      if (PastryAmount <= 2) {
         pastryCost = PastryAmount * 2;
       } else {
         pastryCost = (((PastryAmount - (PastryAmount % 3)) / 3) * 5) + ((PastryAmount % 3) * 2);
@@ -29,9 +27,7 @@ namespace Bakery.Models
     public int BreadTotal(int breadAmount)
     {
       int breadCost = 0;
-      if (BreadAmount % 3 == 0) {
-        breadCost = (BreadAmount * 5) * (2/3);
-      } else if (BreadAmount <= 2) {
+      if (BreadAmount <= 2) {
         breadCost = BreadAmount * 5;
       } else {
         breadCost = (((BreadAmount - (BreadAmount % 3)) * 5) * 2/3) + ((BreadAmount % 3) * 5);

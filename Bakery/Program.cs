@@ -14,8 +14,8 @@ namespace Bakery
 
         Console.WriteLine("\n" + "Welcome to Empey's Bakery" + "\n");
         Console.WriteLine("We sell pastries and bread");
-        Console.WriteLine("Pastries are $2 - Promo: Buy 3 for $5");
-        Console.WriteLine("Bread is $5 - Promo: Buy 2 get 1 free" + "\n");
+        Console.WriteLine("Pastries: $2 - Bread: $5" + "\n");
+        Console.WriteLine("Promos" + "\n" + "-------" + "\n" + "Bread: buy 2 get 1 free" + "\n" + "Pastries: 3 for $5" + "\n");
         Console.WriteLine("How many pastries would you like?");
         string stringPastryAmount = Console.ReadLine();
         int pastryAmount = int.Parse(stringPastryAmount);
@@ -28,6 +28,8 @@ namespace Bakery
           int breadPrice = newStore.BreadTotal(breadAmount);
           // int total = pastryPrice + breadPrice;
           Console.WriteLine("Your total will be: $" + newStore.Total(breadPrice, pastryPrice));
+        } else {
+          Console.WriteLine("\n" + "Error" + "\n" + "Theres nothing in your cart");
         }
         Console.WriteLine("\n" + "------------------------" + "\n");
       }
