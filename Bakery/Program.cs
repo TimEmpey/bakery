@@ -33,11 +33,11 @@ namespace Bakery
           Console.WriteLine("\n" + "Error" + "\n" + "Theres nothing in your cart");
         }
         Console.WriteLine("\n" + "------------------------" + "\n");
-        Console.WriteLine("Would you like to shop some more? (YES / NO)" + "\n");
+        Console.WriteLine("Would you like to place a new order? (YES / NO)" + "\n");
         string response = Console.ReadLine().ToUpper();
         if (response == "YES"){
           userWantsToExit = false;
-          Console.WriteLine("------------------------");
+          Console.WriteLine("------------------------" + "\n" + "New Order" + "\n");
         } else {
           Console.WriteLine("\n" + "Have a nice day!");
           userWantsToExit = true;
