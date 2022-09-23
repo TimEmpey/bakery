@@ -7,14 +7,14 @@ namespace Bakery
   {
     public static void Main()
     {
+
+      Console.WriteLine("\n" + "Welcome to Empey's Bakery" + "\n");
+
       bool userWantsToExit = false;
 
       while(!userWantsToExit)
       {
-
-        Console.WriteLine("\n" + "Welcome to Empey's Bakery" + "\n");
-        Console.WriteLine("We sell pastries and bread");
-        Console.WriteLine("Pastries: $2 - Bread: $5" + "\n");
+        Console.WriteLine("Inventory" + "\n" + "Pastries: $2 - Bread: $5" + "\n");
         Console.WriteLine("Promos" + "\n" + "-------" + "\n" + "Bread: buy 2 get 1 free" + "\n" + "Pastries: 3 for $5" + "\n");
         Console.WriteLine("How many pastries would you like?");
         string stringPastryAmount = Console.ReadLine();
@@ -26,12 +26,22 @@ namespace Bakery
           Store newStore = new Store (pastryAmount, breadAmount);
           int pastryPrice = newStore.PastryTotal(pastryAmount);
           int breadPrice = newStore.BreadTotal(breadAmount);
-          // int total = pastryPrice + breadPrice;
+          Console.WriteLine("------------------------");
+          Console.WriteLine("Cart" + "\n" + "Pastries - " + pastryAmount + "\n" + "Bread - " + breadAmount);
           Console.WriteLine("Your total will be: $" + newStore.Total(breadPrice, pastryPrice));
         } else {
           Console.WriteLine("\n" + "Error" + "\n" + "Theres nothing in your cart");
         }
         Console.WriteLine("\n" + "------------------------" + "\n");
+        Console.WriteLine("Would you like to shop some more? (YES / NO)" + "\n");
+        string response = Console.ReadLine().ToUpper();
+        if (response == "YES"){
+          userWantsToExit = false;
+          Console.WriteLine("------------------------");
+        } else {
+          Console.WriteLine("\n" + "Have a nice day!");
+          userWantsToExit = true;
+        }
       }
     }
   }
