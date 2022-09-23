@@ -30,5 +30,20 @@ namespace Bakery.Tests
       // Assert
         Assert.AreEqual(pastryAmount + breadAmount, result);
     }
+
+    [TestMethod]
+    public void GetPastryPriceAndBreadPrice_ReturnTotalPrice_Int()
+    {
+      // Arrange
+        int pastryAmount = 4;
+        int breadAmount = 4;
+        Store newStore = new Store(pastryAmount, breadAmount);
+      // Act
+        int pastryPrice = newStore.PastryTotal(pastryAmount);
+        int breadPrice = newStore.BreadTotal(breadAmount);
+        int total = pastryPrice + breadPrice;
+      // Assert
+        Assert.AreEqual(total, pastryPrice + breadPrice);
+    }
   }
 }

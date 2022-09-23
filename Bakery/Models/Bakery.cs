@@ -13,14 +13,30 @@ namespace Bakery.Models
       PastryAmount = pastryAmount;
       BreadAmount = breadAmount;
     }
-    public int PastyTotal(int pastryAmount)
+    public int PastryTotal(int pastryAmount)
     {
-      return PastryAmount;
+      int pastryCost = 0;
+      if (pastryCost % 3 == 0) {
+        pastryCost = (PastryAmount / 3) * 5;
+      } else if (PastryAmount <= 2) {
+        pastryCost = PastryAmount * 2;
+      } else {
+        pastryCost = (((PastryAmount - (PastryAmount % 3)) / 3) * 5) + ((PastryAmount % 3) * 2);
+      }
+      return pastryCost;
     }
 
     public int BreadTotal(int breadAmount)
     {
-      return BreadAmount;
+      int breadCost = 0;
+      if (BreadAmount % 3 == 0) {
+        breadCost = (BreadAmount * 5) * (2/3);
+      } else if (BreadAmount <= 2) {
+        breadCost = BreadAmount * 5;
+      } else {
+        breadCost = (((BreadAmount - (BreadAmount % 3)) * 5) * 2/3) + ((BreadAmount % 3) * 5);
+      }
+      return breadCost;
     }
   }
 }
