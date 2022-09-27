@@ -10,10 +10,17 @@ namespace Bakery.Tests
   {
 
     [TestMethod]
-    public void StoreConstructor_CreatesInstanceOfStore_Store()
+    public void BreadConstructor_CreatesInstanceOfBread_Bread()
     {
-      Store newStore = new Store(1, 1);
-      Assert.AreEqual(typeof(Store), newStore.GetType());
+      Bread newBread = new Bread (1);
+      Assert.AreEqual(typeof(Bread), newBread.GetType());
+    }
+
+    [TestMethod]
+    public void PastryConstructor_CreatesInstanceOfPastry_Pastry()
+    {
+      Pastry newPastry = new Pastry(1);
+      Assert.AreEqual(typeof(Pastry), newPastry.GetType());
     }
 
     [TestMethod]
@@ -22,10 +29,11 @@ namespace Bakery.Tests
       // Arrange
         int pastryAmount = 4;
         int breadAmount = 4;
-        Store newStore = new Store(pastryAmount, breadAmount);
+        Bread newBread = new Bread (breadAmount);
+        Pastry newPastry = new Pastry (breadAmount);
       // Act
-        int resultPastry = newStore.PastryAmount;
-        int resultBread = newStore.BreadAmount;
+        int resultPastry = newPastry.PastryAmount;
+        int resultBread = newBread.BreadAmount;
         int result = pastryAmount + breadAmount;
       // Assert
         Assert.AreEqual(pastryAmount + breadAmount, result);
@@ -37,10 +45,11 @@ namespace Bakery.Tests
       // Arrange
         int pastryAmount = 4;
         int breadAmount = 4;
-        Store newStore = new Store(pastryAmount, breadAmount);
+        Bread newBread = new Bread (breadAmount);
+        Pastry newPastry = new Pastry (breadAmount);
       // Act
-        int pastryPrice = newStore.PastryTotal(pastryAmount);
-        int breadPrice = newStore.BreadTotal(breadAmount);
+        int pastryPrice = newPastry.PastryTotal(pastryAmount);
+        int breadPrice = newBread.BreadTotal(breadAmount);
         int total = pastryPrice + breadPrice;
       // Assert
         Assert.AreEqual(total, pastryPrice + breadPrice);
