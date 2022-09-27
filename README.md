@@ -19,7 +19,8 @@ _Bakery store front accessible through the terminal where user can shop for past
 * _Open up your terminal and navigate to the desired landing folder_
 * _In terminal enter, ' "git clone https://github.com/TimEmpey/bakery '_
 * _In terminal enter 'code .' to open files in Visual Studio Code_
-* _In VS Code terminal navigate to the Dakery directory (file path ex. user/desktop/epicodus/projects/bakery/Bakery)_
+* _In VS Code terminal navigate to the Bakery directory (file path ex. user/desktop/epicodus/projects/bakery/Bakery)_
+* _Run '$ dotnet restore' followed by '$ dotnet build'_
 * _Enter $ dotnet run to start program_
 
 ## Known Bugs
