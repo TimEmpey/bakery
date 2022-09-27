@@ -23,12 +23,13 @@ namespace Bakery
         string stringBreadAmount = Console.ReadLine();
         int breadAmount = int.Parse(stringBreadAmount);
         if (pastryAmount > 0 || breadAmount > 0){
-          Store newStore = new Store (pastryAmount, breadAmount);
-          int pastryPrice = newStore.PastryTotal(pastryAmount);
-          int breadPrice = newStore.BreadTotal(breadAmount);
+          Bread newBread = new Bread (breadAmount);
+          Pastry newPastry = new Pastry (breadAmount);
+          int pastryPrice = newPastry.PastryTotal(pastryAmount);
+          int breadPrice = newBread.BreadTotal(breadAmount);
           Console.WriteLine("------------------------");
           Console.WriteLine("Cart" + "\n" + "Pastries - " + pastryAmount + "\n" + "Bread - " + breadAmount);
-          Console.WriteLine("Your total will be: $" + newStore.Total(breadPrice, pastryPrice));
+          Console.WriteLine("Your total will be: $" + newPastry.Total(breadPrice, pastryPrice));
         } else {
           Console.WriteLine("\n" + "Error" + "\n" + "Theres nothing in your cart");
         }
